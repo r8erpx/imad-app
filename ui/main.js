@@ -1,6 +1,16 @@
 console.log('Loaded!');
-var img = document.getElementById("ico");
+var img = document.getElementById("dino");
 var marginLeft = 0;
+
+function moveRight() {
+    marginLeft = marginLeft + 5;
+    img.style.marginLeft = marginLeft + "px";
+
+}
+
+img.onclick = function interval() {
+	var interval = setInterval(moveRight, 10);
+};
 
 moveRight(){
     marginLeft = marginLeft + 10;
@@ -10,4 +20,3 @@ moveRight(){
 img.onClick = function () {
     var interval = setInterval(moveRight, 100);
 };
-
