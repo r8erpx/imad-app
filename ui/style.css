@@ -1,14 +1,17 @@
 body {
     font-family: sans-serif;
-    background-color: lightgrey;
+
     margin-top: 75px;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
-    color: grey;
+    color: #4c4a4a;
     font-family: sans-serif;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .center {
