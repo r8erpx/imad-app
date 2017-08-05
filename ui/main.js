@@ -1,5 +1,4 @@
 console.log('Loaded!');
-function moveRight(){}
 var img = document.getElementById("ico");
 var marginLeft = 0;
 
