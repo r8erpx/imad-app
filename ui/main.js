@@ -12,7 +12,7 @@ img.onclick = function interval() {
 	var interval = setInterval(moveRight, 10);
 };
 
-moveRight(){
+function moveRight(){
     marginLeft = marginLeft + 10;
     img.style.marginLeft = marginLeft + 'px';
 }
