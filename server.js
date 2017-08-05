@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var articles{
+var article{
     articleOne = {
         title: 'Article One | Rachit Arora',
         heading: 'Article One',
