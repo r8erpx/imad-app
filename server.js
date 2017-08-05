@@ -25,33 +25,35 @@ var articleOne = {
 `
 };
 
-var htmlTemplate = `
-<html>
-	<head>
-		<title>
-		${title}
-		</title>
-		<link rel="stylesheet" href="ui/style.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	</head>
-
-	<body>
-		<div class="container">
-			<div>
-				<a href="/">Home</a>
-			</div>
-			<hr>
-			<h3>${heading}</h3>
-			<div>
-				${date}
-			</div>
-			<div>
-			${content}
-			</div>
-		</div>
-	</body>
-</html>
-`
+function createTemplate(data) {
+    var htmlTemplate = `
+    <html>
+    	<head>
+    		<title>
+    		${title}
+    		</title>
+    		<link rel="stylesheet" href="ui/style.css">
+    		<meta name="viewport" content="width=device-width, initial-scale=1">
+    	</head>
+    
+    	<body>
+    		<div class="container">
+    			<div>
+    				<a href="/">Home</a>
+    			</div>
+    			<hr>
+    			<h3>${heading}</h3>
+    			<div>
+    				${date}
+    			</div>
+    			<div>
+    			${content}
+    			</div>
+    		</div>
+    	</body>
+    </html>
+    `;
+}
 
 
 app.get('/', function (req, res) {
