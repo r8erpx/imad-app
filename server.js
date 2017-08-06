@@ -23,6 +23,14 @@ var article = {
     		<p>
     			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic excepturi deleniti adipisci maiores, odit recusandae sint nemo, distinctio quae reprehenderit veniam nesciunt. Ullam est ipsa, nesciunt dolor consectetur porro iste.
     		</p>
+            <br />
+            <hr />
+            <br />
+            <input type="text" id="c1" placeholder="Comments"/>
+            <button type="submit" value="submit" id="c1_submit">Submit</button>
+            <ul class="c1list">
+
+            </ul>
     `
     },
     'article-two' : {
@@ -99,6 +107,14 @@ app.get('/submit-name/', function (req, res) {
     names.push(name);
 
     res.send(JSON.stringify(names));
+
+});
+
+var comments1 = [];
+app.get('/a1-comments', function (req, res) {
+    var comment = req.query.c1; 
+    comments1.push(comment);
+    res.send(JSON.stringify(comments1));
 
 });
 
