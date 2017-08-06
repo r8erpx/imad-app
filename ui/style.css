@@ -30,3 +30,15 @@ body {
     height: 200px;
 }
 
+#counter {
+padding: 12px 20px ;
+margin: 5px;
+color: white;
+background-color: red;
+border: none;
+font-weight: bold;
+}
+
+#count {
+    color: red;
+}
