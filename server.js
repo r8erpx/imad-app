@@ -23,13 +23,11 @@ var article = {
     		<p>
     			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic excepturi deleniti adipisci maiores, odit recusandae sint nemo, distinctio quae reprehenderit veniam nesciunt. Ullam est ipsa, nesciunt dolor consectetur porro iste.
     		</p>
-            <br />
-            <hr />
-            <br />
-            <input type="text" id="c1" placeholder="Comments"/>
-            <button type="submit" value="submit" id="c1_submit">Submit</button>
-            <ul class="c1list">
 
+            <input type="text" id="comment" placeholder="Comment"></input>
+            <button type="submit" value="submit" id="comment_btn">Submit</button>
+            <ul id="commentList">
+            
             </ul>
     `
     },
@@ -45,6 +43,11 @@ var article = {
     		<p>
     			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic excepturi deleniti adipisci maiores, odit recusandae sint nemo, distinctio quae reprehenderit veniam nesciunt. Ullam est ipsa, nesciunt dolor consectetur porro iste.
     		</p>
+            <input type="text" id="comment" placeholder="Comment"></input>
+            <button type="submit" value="submit" id="comment_btn">Submit</button>
+            <ul id="commentList">
+            
+            </ul>
     `
     },
     'article-three' : {
@@ -55,6 +58,11 @@ var article = {
             <p>
     			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic excepturi deleniti adipisci maiores, odit recusandae sint nemo, distinctio quae reprehenderit veniam nesciunt. Ullam est ipsa, nesciunt dolor consectetur porro iste.
     		</p>
+            <input type="text" id="comment" placeholder="Comment"></input>
+            <button type="submit" value="submit" id="comment_btn">Submit</button>
+            <ul id="commentList">
+            
+            </ul>
     `
     }
 }
@@ -91,6 +99,7 @@ function createTemplate(data) {
     			</div>
     		</div>
     	</body>
+        <script type="text/javascript" src="/ui/comments.js"></script>
     </html>
     `;
     return htmlTemplate;
@@ -105,18 +114,17 @@ var names = [];
 app.get('/submit-name/', function (req, res) {
     var name = req.query.name; 
     names.push(name);
-
     res.send(JSON.stringify(names));
 
 });
 
-var comments1 = [];
-app.get('/a1-comments', function (req, res) {
-    var comment = req.query.c1; 
-    comments1.push(comment);
-    res.send(JSON.stringify(comments1));
-
+var comments = [];
+app.get('/comments-a1' , function (req, res) {
+    var comment = req.query.comment;
+    comments.push(comment);
+    res.send(JSON.stringify(comments));
 });
+
 
 
 app.get('/counter', function(req,res) {
@@ -138,6 +146,10 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
+app.get('/ui/comments.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'comments.js'));
+});
+
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
@@ -146,7 +158,7 @@ app.get('/ui/madi.png', function (req, res) {
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 
-var port = 80;
+var port = 1234;
 app.listen(port, function () {
   console.log(`IMAD course app listening on port ${port}!`);
 });

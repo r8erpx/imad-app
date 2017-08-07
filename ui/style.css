@@ -61,7 +61,7 @@ width: 250px;
     font-family: monospace, sans-serif;
 }
 
-#namelist li {
+#namelist li, #commentList li {
     padding: 7px;
     list-style: none;
     
